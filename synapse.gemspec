@@ -14,6 +14,9 @@ Synapse is Airbnb's new system for service discovery.  Synapse solves the
 problem of automated fail-over in the cloud, where failover via network
 re-configuration is impossible.  The end result is the ability to connect
 internal services together in a scalable, fault-tolerant way.
+
+This is a forked version which adds support for Apache Aurora service
+announcements.
 EOF
   gem.homepage      = 'https://github.com/benley/synapse'
   gem.license       = 'MIT'
