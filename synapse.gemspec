@@ -4,24 +4,25 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'synapse/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "synapse"
+  gem.name          = 'synapse-aurora'
   gem.version       = Synapse::VERSION
-  gem.authors       = ["Martin Rhoads"]
-  gem.email         = ["martin.rhoads@airbnb.com"]
-  gem.description   = %q{: Write a gem description}
-  gem.summary       = %q{: Write a gem summary}
-  gem.homepage      = ""
+  gem.authors       = ['Martin Rhoads']
+  gem.email         = ['martin.rhoads@airbnb.com']
+  gem.description   = 'Fork of Airbnb Synapse with support for Apache Aurora'
+  gem.summary       = File.read('README.md')
+  gem.homepage      = 'https://github.com/benley/synapse'
+  gem.license       = 'MIT'
 
-  gem.files         = `git ls-files`.split($/)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  gem.files         = `git ls-files`.split($RS)
+  gem.executables   = gem.files.grep(%r{^bin/}).map { |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
 
-  gem.add_runtime_dependency "aws-sdk", "~> 1.39"
-  gem.add_runtime_dependency "docker-api", "~> 1.7.2"
-  gem.add_runtime_dependency "zk", "~> 1.9.4"
+  gem.add_runtime_dependency 'aws-sdk', '~> 1.39'
+  gem.add_runtime_dependency 'docker-api', '~> 1.7', '>= 1.7.2'
+  gem.add_runtime_dependency 'zk', '~> 1.9', '>= 1.9.4'
 
-  gem.add_development_dependency "rake"
-  gem.add_development_dependency "rspec"
-  gem.add_development_dependency "pry"
-  gem.add_development_dependency "pry-nav"
+  gem.add_development_dependency 'rake'
+  gem.add_development_dependency 'rspec'
+  gem.add_development_dependency 'pry'
+  gem.add_development_dependency 'pry-nav'
 end
