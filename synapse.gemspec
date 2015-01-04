@@ -8,8 +8,13 @@ Gem::Specification.new do |gem|
   gem.version       = Synapse::VERSION
   gem.authors       = ['Martin Rhoads']
   gem.email         = ['martin.rhoads@airbnb.com']
-  gem.description   = 'Fork of Airbnb Synapse with support for Apache Aurora'
-  gem.summary       = File.read('README.md')
+  gem.summary       = 'Fork of Airbnb Synapse with support for Apache Aurora'
+  gem.description   = <<-EOF
+Synapse is Airbnb's new system for service discovery.  Synapse solves the
+problem of automated fail-over in the cloud, where failover via network
+re-configuration is impossible.  The end result is the ability to connect
+internal services together in a scalable, fault-tolerant way.
+EOF
   gem.homepage      = 'https://github.com/benley/synapse'
   gem.license       = 'MIT'
 
