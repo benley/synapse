@@ -21,7 +21,7 @@ EOF
   gem.homepage      = 'https://github.com/benley/synapse'
   gem.license       = 'MIT'
 
-  gem.files         = `git ls-files`.split($RS)
+  gem.files         = Dir['*', 'bin/*', 'config/**/*', 'lib/**/*', 'spec/**/*']
   gem.executables   = gem.files.grep(%r{^bin/}).map { |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
 
