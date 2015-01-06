@@ -8,11 +8,12 @@ let
     rubyLibs.aws_sdk
     myGems.zk
     myGems.docker_api
+    haproxy
   ];
 in
   stdenv.mkDerivation rec {
     name = "synapse-git";
-    version = "0.11.1";
+    version = "0.11.2.1";
 
     src = ./.;
 
@@ -33,7 +34,7 @@ in
         --ignore-dependencies \
         --install-dir "$out/${ruby.gemPath}" \
         --bindir "$out/bin" \
-        "synapse-${version}.gem" $gemFlags -- $buildFlags
+        "synapse-aurora-${version}.gem" $gemFlags -- $buildFlags
 
       # Don't keep the .gem file in the finished package
       rm -frv "$out/${ruby.gemPath}/cache"
